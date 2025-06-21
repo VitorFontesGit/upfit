@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UP FIT - Academia</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  
+  <!-- CSS externo -->
+  <link href="style_crossfit.css" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="icon.png" type="image/png" />
+</head>
+<body>
+  <header>
+    <nav class="nav_label">
+      <img class="nav_logo" src="logo.png" alt="Logo UP FIT" />
+      <button class="nav_toggle" id="nav_toggle" aria-label="Toggle menu">&#9776;</button>
+      <div class="nav_links" id="nav_links">
+        <a class="nav_item" href="index.html">HOME</a>
+        <a class="nav_item" href="planos.html">PLANOS</a>
+        <a class="nav_item" href="musculacao.html">MUSCULAÇÃO</a>
+        <a class="nav_item" href="crossfit.html">CROSS FIT</a>
+        <a class="nav_item" href="personais.html">PERSONAIS</a>
+        <a class="nav_item" href="sobre.html">SOBRE NÓS</a>
+      </div>
+    </nav>
+  </header>
+	<section class="hero-container">
+<!-- Triângulos decorativos -->
+    <div class="triangulo-container triangulo-1">
+      <div class="triangulo-decorativo"></div>
+    </div>
+    <div class="triangulo-container triangulo-2">
+      <div class="triangulo-decorativo"></div>
+    </div>
+    <div class="triangulo-container triangulo-3">
+      <div class="triangulo-decorativo"></div>
+    </div>
+    <div class="triangulo-container triangulo-4">
+      <div class="triangulo-decorativo"></div>
+    </div>
+		<div class="hero-contain">
+			<div class="hero-title-wrapper">
+    			 <h1 class="hero-title-main">UP FIT</h1>
+     			 <h2 class="hero-title-sub">CROSSFIT</h2>
+   			</div>	
+		</div>
+	
+
+		<!-- setas -->
+
+	<div class="setas-wrapper">
+      <svg class="seta-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <polyline points="6 9 12 15 18 9"
+          stroke="rgb(199, 246, 87)"
+          stroke-width="4"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+      </svg>
+      <svg class="seta-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <polyline points="6 9 12 15 18 9"
+          stroke="rgb(199, 246, 87)"
+          stroke-width="4"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+      </svg>
+      <svg class="seta-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <polyline points="6 9 12 15 18 9"
+          stroke="rgb(199, 246, 87)"
+          stroke-width="4"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+      </svg>
+    </div>
+	</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+  <div class="footer-container">
+   <div class="footer-left">
+      <strong>UP FIT ACADEMIA</strong><br>
+      Rua da Saúde, 123 - Centro<br>
+      Curitiba - PR<br>
+      CNPJ: 00.000.000/0001-00
+    </div>
+
+    <div class="footer-center">
+      <strong>Horário de Funcionamento</strong><br>
+      Segunda a Sexta: 06h às 22h<br>
+      Sábados: 08h às 18h<br>
+      Domingos e Feriados: Fechado
+    </div>
+
+    <div class="footer-right">
+      <strong>Fale Conosco</strong><br>
+      WhatsApp: (41) 99999-9999<br>
+      Email: contato@upfit.com.br<br>
+      Instagram: @upfitacademia
+    </div>
+  </div>
+</footer>
+
+  <script>
+    const toggle = document.getElementById('nav_toggle');
+    const links = document.getElementById('nav_links');
+    toggle.addEventListener('click', () => {
+      links.classList.toggle('show');
+    });
+
+    const nav = document.querySelector('.nav_label');
+    const originalHeight = nav.offsetHeight;
+    const shrinkHeight = originalHeight * (2 / 3); // reduz 1/3
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.style.height = shrinkHeight + 'px';
+      } else {
+        nav.style.height = originalHeight + 'px';
+      }
+    });
+  </script>
+</body>
+</html>
