@@ -239,6 +239,10 @@ footer {
 .footer-left { text-align: left; }
 .footer-right { text-align: right; }
 
+.footer-copy{
+  text-align: center;
+  margin-top: 1em;
+}
 
 /* ========== ANIMAÇÕES ========== */
 

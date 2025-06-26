@@ -7,6 +7,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: "Montserrat", sans-serif;
+  background-color: #060606;
 }
 
 
@@ -81,7 +82,7 @@ html, body {
   text-align: center;
   padding: 0 1em;
   box-sizing: border-box;
-  filter: drop-shadow(0 10px 10px black);
+  box-shadow: 0 10px 10px black, 0 -10px 10px black;
 }
 
 /* Título principal e subtítulo */
@@ -209,8 +210,8 @@ animation: girar2 10s 0.3s linear infinite, glowPulse 4s ease-in-out infinite, t
 
 /* ========== SEÇÃO: SOBRE/CONTEÚDO PRINCIPAL ========== */
 .main-container{
-  padding: 2em 0em 2em 0em;
-  background-color: #111;
+  padding: 0em 0em 2em 0em;
+  background-color: #060606;
 }
 .main-content {
   position: relative;
@@ -222,7 +223,8 @@ animation: girar2 10s 0.3s linear infinite, glowPulse 4s ease-in-out infinite, t
   overflow: hidden;
   z-index: 2;
   border: 1px solid black; 
-  filter: drop-shadow(0 -10px 10px black);
+  box-shadow: 0 10px 10px black, 0 -10px 10px black;
+  margin-top: 2em;
 }
 
 .main-content-image {
@@ -232,8 +234,8 @@ animation: girar2 10s 0.3s linear infinite, glowPulse 4s ease-in-out infinite, t
   height: 100%;
   width: 100%;
   background-image:
-    linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 55%, rgba(0, 0, 0, 0.8) 85%, rgba(0, 0, 0, 0.7) 100%),
-    url('background_image.png');
+    linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0.8) 85%, rgba(0, 0, 0, 0.7) 100%),
+    url('home-content1.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -243,13 +245,13 @@ animation: girar2 10s 0.3s linear infinite, glowPulse 4s ease-in-out infinite, t
   position: relative;
   z-index: 2;
   text-align: center;
-  width: 55vw;
+  width: 50vw;
   padding: 2em;
 }
 
 .main-subtitle{
-  margin: 0;
-  font-size: 3em;
+  margin: 0em 0em 2em 0em;
+  font-size: clamp(2.2rem, 6vh, 4.2rem); /* responsivo */
   color: black;
   font-style: italic;
     text-shadow:
@@ -259,29 +261,149 @@ animation: girar2 10s 0.3s linear infinite, glowPulse 4s ease-in-out infinite, t
     1px 1px 0 rgb(255, 255, 255);
 }
 
+.main-subtitle-glow{
+  text-shadow:
+    -1px -1px 0 rgb(179, 234, 62),
+    1px -1px 0 rgb(179, 234, 62),
+    -1px 1px 0 rgb(179, 234, 62),
+    1px 1px 0 rgb(179, 234, 62);
+}
+
 .main-content h3{
   color: whitesmoke;
-  font-size: 1.8em;
+  font-size: clamp(1.5rem, 3.75vh, 3.75rem); /* responsivo */
   margin-bottom: 3em;
 }
 .main-content p{
   color: whitesmoke;
-  font-size: 1.5em;
-  text-align: left;
+  font-size: clamp(1.5rem, 3vh, 3rem);
+  text-align: justify;
   font-weight: bold;
-  text-transform: capitalize;
   padding-bottom: 1.2em;
 }
 
-.main-content-button{
+.main-content a{
+  font-size: clamp(1.5rem, 4vh, 3rem); /* responsivo */
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: bolder;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-shadow:
+    -1px -1px 0 rgb(255, 255, 255),
+    1px -1px 0 rgb(255, 255, 255),
+    -1px 1px 0 rgb(255, 255, 255),
+    1px 1px 0 rgb(255, 255, 255);
+} 
+
+.main-content a:visited {
+  color: black; /* ou a cor que você quiser */
+}
+
+.main-content-button {
   width: 100%;
   height: auto;
-  background-color: rgb(179,234,62);
-  border:1px solid black;
-  border-radius: 10px;
+  background-color: rgb(0, 0, 0);
+  border: 1px outset whitesmoke;
+  border-radius: 12px;
+  padding: 0.8em;
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(3px);
+  
 }
-.main-content a{
-  font-size: 3em;
+
+.main-content-button:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.02);
+  cursor:pointer;
+  
+}
+
+
+/* SEÇÃO: CONTEUDO 2 */
+
+.main-content2 {
+  position: relative;
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  padding-top: 3em;
+  overflow: hidden;
+  z-index: 2;
+  border: 1px solid black; 
+  box-shadow: 0 10px 10px black, 0 -10px 10px black;
+  margin-top: 2em;
+}
+
+.main-content-image2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image:
+    linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0.8) 85%, rgba(0, 0, 0, 0.7) 100%),
+    url('home-content2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+.main-title-container2 {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 50vw;
+  padding: 2em;
+}
+
+.main-subtitle2 {
+  margin: 0em 0em 2em 0em;
+  font-size: clamp(2.2rem, 6vh, 4.2rem); /* responsivo */
+  color: black;
+  font-style: italic;
+    text-shadow:
+    -1px -1px 0 rgb(179,234,62),
+    1px -1px 0 rgb(179,234,62),
+    -1px 1px 0 rgb(179,234,62),
+    1px 1px 0 rgb(179,234,62);
+  text-transform:capitalize;
+}
+
+.main-subtitle2-glow{
+  color:rgb(179,234,62);
+  text-shadow:
+    -1px -1px 0 rgb(0, 0, 0),
+    1px -1px 0 rgb(0, 0, 0),
+    -1px 1px 0 rgb(0, 0, 0),
+    1px 1px 0 rgb(0, 0, 0);
+}
+
+.main-content2 h3{
+  color: whitesmoke;
+  font-size: clamp(1.2rem, 2.5vh, 2.5rem); /* responsivo */
+  margin-bottom: 3em;
+}
+.main-content2 p{
+  color: whitesmoke;
+  font-size: clamp(1.5rem, 3vh, 3rem); /* responsivo */
+  font-weight: bold;
+  /* text-transform: capitalize; */
+  padding-bottom: 1.2em;
+}
+
+.main-subtitle2-p1{
+  text-align: justify;
+}
+
+.main-subtitle2-p2{
+  text-align: right;
+}
+
+.main-content2 a{
+  font-size: clamp(1.5rem, 4vh, 3rem); /* responsivo */
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   font-weight: bolder;
@@ -289,7 +411,102 @@ animation: girar2 10s 0.3s linear infinite, glowPulse 4s ease-in-out infinite, t
   letter-spacing: 0.1em;
 }
 
-.main-content a:visited {
+.main-content2 a:visited {
+  color: black; /* ou a cor que você quiser */
+}
+
+/* SEÇÃO: CONTEUDO 3 */
+
+.main-content3 {
+  position: relative;
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  padding-top: 3em;
+  overflow: hidden;
+  z-index: 2;
+  border: 1px solid black; 
+  box-shadow: 0 10px 10px black, 0 -10px 10px black;
+  margin-top: 2em;
+}
+
+.main-content-image3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0.8) 85%, rgba(0, 0, 0, 0.7) 100%),
+    url('home-content3.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+.main-title-container3 {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 50vw;
+  padding: 2em;
+}
+
+.main-subtitle3 {
+  margin: 0em 0em 2em 0em;
+  font-size: clamp(2.2rem, 6vh, 4.2rem); /* responsivo */
+  color: black;
+  font-style: italic;
+    text-shadow:
+    -1px -1px 0 rgb(179,234,62),
+    1px -1px 0 rgb(179,234,62),
+    -1px 1px 0 rgb(179,234,62),
+    1px 1px 0 rgb(179,234,62);
+  text-transform:capitalize;
+}
+
+.main-subtitle3-glow{
+  color:rgb(179,234,62);
+  text-shadow:
+    -1px -1px 0 rgb(0, 0, 0),
+    1px -1px 0 rgb(0, 0, 0),
+    -1px 1px 0 rgb(0, 0, 0),
+    1px 1px 0 rgb(0, 0, 0);
+  font-size: clamp(2.6rem, 7.2vh, 5rem);
+}
+
+.main-content3 h3{
+  color: whitesmoke;
+  font-size: clamp(1.2rem, 2.5vh, 2.5rem); /* responsivo */
+  margin-bottom: 3em;
+}
+.main-content3 p{
+  color: whitesmoke;
+  font-size: clamp(1.5rem, 3vh, 3rem); /* responsivo */
+  font-weight: bold;
+  /* text-transform: capitalize; */
+  padding-bottom: 1.2em;
+}
+
+.main-subtitle3-p1{
+  text-align: justify;
+}
+
+.main-subtitle3-p2{
+  text-align: left;
+}
+
+.main-content3 a{
+  font-size: clamp(1.5rem, 4vh, 3rem); /* responsivo */
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: bolder;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+}
+
+.main-content3 a:visited {
   color: black; /* ou a cor que você quiser */
 }
 
@@ -299,7 +516,7 @@ footer {
   width: 100%;
   background-color: black;
   color: rgb(179,234,62);
-  padding: 2em 1em;
+  padding: 2em 0em 1em 0em;
   font-size: 1em;
   /* bottom:0; */
   filter: drop-shadow(0 0 10px black);
@@ -325,6 +542,10 @@ footer {
 .footer-left { text-align: left; }
 .footer-right { text-align: right; }
 
+.footer-copy{
+  text-align: center;
+  margin-top: 1em;
+}
 
 /* ========== ANIMAÇÕES ========== */
 
@@ -378,16 +599,22 @@ footer {
   .hero-title-sub { font-size: 2.5rem; }
   .title-text-1 { font-size: 3.5em;}
 
-  .main-title-container {width: 100vw;}
-  .main-content h3 {margin-bottom: 1.5em;}
-  .main-content p {padding-bottom: 0.5em;
+  .main-title-container, .main-title-container2, .main-title-container3 {width: 100vw;}
+  .main-content h3, .main-content2 h3, .main-conentent3 h3{margin-bottom: 1.5em;}
+  .main-content p, .main-content2 p, .main-content3 p {padding-bottom: 0.5em;
                    font-size: 1.3em;
   }
 
-  .main-content a {font-size: 1.5em;}
-  .main-content-image{ background-image:linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.7) 15%, rgba(0, 0, 0, 0) 100%),
-    url('background_image.png');
-                       filter: opacity(10%);}
+  .main-content a, .main-content2 a, .main-content3 a{font-size: 1.5em;}
+  .main-content-image { background-image:linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.7) 15%, rgba(0, 0, 0, 0) 100%),
+    url('home-content1.png');
+   filter: opacity(30%);}
+  .main-content-image2 { background-image:linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.7) 15%, rgba(0, 0, 0, 0) 100%),
+    url('home-content2.png');
+   filter: opacity(30%);}
+  .main-content-image3 { background-image:linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.7) 15%, rgba(0, 0, 0, 0) 100%),
+    url('home-content3.png');
+   filter: opacity(30%);}
 }
 
 @media (max-width: 768px) {
